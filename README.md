@@ -36,7 +36,7 @@ These are the current features I am aiming for but may be subject to change in t
 
 ## Candidate API
 
-**API:** FreeToGanme
+**API:** FreeToGame
 
 **Documentation:** https://www.freetogame.com/api-doc
 
