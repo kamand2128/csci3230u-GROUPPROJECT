@@ -36,11 +36,11 @@ These are the current features I am aiming for but may be subject to change in t
 
 ## Candidate API
 
-**API:** RAWG Video Games Database
+**API:** FreeToGanme
 
-**Documentation:** https://rawg.io/apidocs
+**Documentation:** https://www.freetogame.com/api-doc
 
-RAWG provides access to video game information such as titles, genres, platforms, release dates, ratings, descriptions, and images.
+FreeToGame provides access to video game information such as titles, genres, platforms, release dates, ratings, descriptions, and images.
 
 This API is being considered because it offers the information needed to create a searchable video game catalogue with individual game detail pages.
 
