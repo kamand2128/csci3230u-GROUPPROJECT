@@ -128,7 +128,7 @@ The main library page will contain:
 - Grid of game cards
 - Favourite controls
 
-**Wireframe:** To be added.
+**Wireframe:** ![GameVault Game Library Wireframe](mainlibrary.png)
 
 ### Game Details Page
 
