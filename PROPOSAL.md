@@ -142,5 +142,5 @@ The game details page will contain:
 - Game status selector
 - Personal review form
 
-**Wireframe:** To be added.
+**Wireframe:** ![Game Details Wireframe](gamecard.png)
 
