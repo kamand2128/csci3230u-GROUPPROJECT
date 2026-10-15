@@ -1,0 +1,804 @@
+
+/* ==========================================
+   GAMEVAULT - GLOBAL STYLES
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #080D1F;
+    color: #F0F5FF;
+    font-family: "Space Mono", monospace;
+}
+
+a {
+    color: #C4A1FF;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* ==========================================
+   NAVIGATION BAR
+========================================== */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+
+    background-color: #0B1120;
+    border-bottom: 2px solid #6753A3;
+}
+
+/* GameVault logo */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-family: "Press Start 2P", monospace;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #A5B4FC;
+}
+
+.logo-star {
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1;
+    color: #A78BFA;
+}
+
+/* Navigation links */
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.site-header nav a {
+    color: #A5BCE8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    color: #DAA2FB;
+}
+
+/* ==========================================
+   DISCOVER GAMES / SEARCH
+========================================== */
+
+.search-section {
+    margin: 40px;
+    padding: 32px;
+
+    background-color: #10192C;
+    border: 1px solid #40567D;
+}
+
+.search-section h1 {
+    font-family: "Press Start 2P", monospace;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #F0F5FF;
+}
+
+.search-section p {
+    font-size: 14px;
+    color: #A5BCE8;
+}
+
+.search-form {
+    display: flex;
+    margin-top: 24px;
+}
+
+.search-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+
+    background-color: #0B1120;
+    border: 1px solid #40567D;
+    color: #F0F5FF;
+    font-size: 14px;
+}
+
+.search-form input::placeholder {
+    color: #A5BCE8;
+}
+
+.search-form button {
+    padding: 0 24px;
+    background-color: #352B60;
+    border: 1px solid #A78BFA;
+    color: #F0F5FF;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #493A7A;
+}
+
+/* ==========================================
+   LIBRARY LAYOUT
+========================================== */
+
+.library-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 32px;
+    margin: 0 40px 40px;
+    align-items: start;
+}
+
+/* ==========================================
+   FILTERS SIDEBAR
+========================================== */
+
+.filters {
+    padding: 24px;
+    background-color: #131D31;
+    border: 1px solid #40567D;
+}
+
+.filters h2,
+.games-section h2 {
+    margin-top: 0;
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #F0F5FF;
+}
+
+.filters label {
+    display: block;
+    margin: 24px 0 10px;
+    color: #A5BCE8;
+    font-size: 12px;
+}
+
+.filters select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+
+    background-color: #0B1120;
+    border: 1px solid #40567D;
+    color: #F0F5FF;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   AVAILABLE GAMES
+========================================== */
+
+.games-section {
+    min-width: 0;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Individual game cards */
+
+.game-card {
+    min-width: 0;
+    padding: 12px;
+    background-color: #17223A;
+    border: 1px solid #40567D;
+    transition: border-color 0.2s ease;
+}
+
+.game-card:hover {
+    border-color: #A78BFA;
+}
+
+.game-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #38455F;
+}
+
+.game-card h3 {
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.game-card p {
+    color: #A5BCE8;
+    font-size: 12px;
+}
+
+.game-card a {
+    color: #C4A1FF;
+    font-size: 12px;
+}
+
+.game-card a:hover {
+    color: #F0F5FF;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #38D9FF;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    padding: 30px 16px;
+    text-align: center;
+    color: #A5BCE8;
+    font-size: 12px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .library-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+
+    .game-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    }
+
+    .site-header {
+        flex-direction: column;
+        gap: 24px;
+        padding: 25px 16px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .logo-star {
+        font-size: 30px;
+    }
+
+    .site-header nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+
+    .search-section {
+        margin: 20px 16px;
+        padding: 20px;
+    }
+
+    .search-section h1 {
+        font-size: 16px;
+    }
+
+    .search-section p {
+        font-size: 12px;
+    }
+
+    .search-form input {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .search-form button {
+        padding: 0 16px;
+    }
+
+    .library-layout {
+        margin: 0 16px 24px;
+        gap: 20px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        padding: 20px;
+    }
+}
+
+
+/* ==========================================
+   GAME DETAILS - INFORMATION
+========================================== */
+
+.game-information {
+    min-width: 0;
+}
+
+/* Game title */
+
+.game-information h1 {
+    margin: 0 0 20px;
+    color: #F0F5FF;
+    font-family: "Press Start 2P", monospace;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Game metadata */
+
+.game-meta {
+    margin: 0 0 24px;
+    color: #91AEEA;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Favourite button */
+
+.favourite-button {
+    display: inline-block;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+
+    background-color: #0B1120;
+    border: 1px solid #A78BFA;
+
+    color: #C4A1FF;
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.favourite-button:hover {
+    background-color: #352B60;
+    color: #FFFFFF;
+}
+
+/* Game status panel */
+
+.game-status {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    padding: 22px;
+    margin-bottom: 20px;
+
+    background-color: #10192C;
+    border: 1px solid #40567D;
+}
+
+.game-status label {
+    color: #91AEEA;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.game-status select {
+    flex: 1;
+    min-width: 0;
+    max-width: 330px;
+
+    padding: 12px 16px;
+
+    background-color: #0B1120;
+    border: 1px solid #536A9A;
+
+    color: #F0F5FF;
+    font-size: 14px;
+}
+
+/* Quick information panel */
+
+.quick-info {
+    padding: 22px;
+    background-color: #10192C;
+    border: 1px solid #40567D;
+    border-bottom: 2px solid #A78BFA;
+}
+
+.quick-info h2 {
+    margin: 0 0 20px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    color: #F0F5FF;
+}
+
+.quick-info dl {
+    margin: 0;
+}
+
+.quick-info dl > div {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 16px;
+
+    padding: 13px 0;
+    border-top: 1px solid #34486D;
+}
+
+.quick-info dt {
+    color: #91AEEA;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.quick-info dd {
+    margin: 0;
+    color: #DCE6FF;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+
+    .game-information h1 {
+        font-size: 18px;
+    }
+
+    .game-status {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .game-status select {
+        max-width: none;
+    }
+
+    .quick-info dl > div {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
+
+/* Title and favourite button side by side */
+
+.game-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.game-title-row h1 {
+    margin: 0;
+}
+
+.game-title-row .favourite-button {
+    margin: 0;
+}
+
+
+/* ==========================================
+   GAME DETAILS - MAIN LAYOUT
+========================================== */
+
+.game-details {
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 28px;
+
+    background-color: #10192C;
+    border: 1px solid #40567D;
+}
+
+/* Back to Library */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #91AEEA;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #C4A1FF;
+}
+
+/* Two-column layout */
+
+.game-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left image gallery */
+
+.game-gallery {
+    min-width: 0;
+}
+
+.game-main-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 2px solid #A78BFA;
+}
+
+/* Four smaller screenshots */
+
+.game-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+
+/* Selected gallery thumbnail */
+
+.game-thumbnails img:first-child {
+    border: 2px solid #A78BFA;
+}
+
+.game-thumbnails img {
+    cursor: default;
+}
+
+
+.game-thumbnails img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid #40567D;
+}
+
+/* ==========================================
+   GAME DETAILS - RESPONSIVENESS
+========================================== */
+
+@media (max-width: 1650px) {
+    .game-details {
+        margin: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .game-overview {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .game-details {
+        margin: 20px 16px;
+        padding: 16px;
+    }
+
+    .game-thumbnails {
+        gap: 6px;
+    }
+}
+
+
+/* ==========================================
+   ABOUT THIS GAME & REVIEWS
+========================================== */
+
+.game-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.game-description,
+.game-reviews {
+    min-width: 0;
+    padding: 24px;
+    background-color: #10192C;
+    border: 1px solid #40567D;
+    border-bottom: 2px solid #A78BFA;
+}
+
+.game-description h2,
+.game-reviews h2 {
+    margin: 0 0 20px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #F0F5FF;
+}
+
+.game-description p,
+.game-reviews p {
+    color: #A5BCE8;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* REVIEWS */
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.reviews-header h2 {
+    margin: 0;
+}
+
+.review-button {
+    padding: 12px 16px;
+    background-color: #0B1120;
+    border: 1px solid #A78BFA;
+    color: #C4A1FF;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.review {
+    padding: 16px 0;
+    border-top: 1px solid #34486D;
+}
+
+.review-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: #F0F5FF;
+    font-size: 12px;
+}
+
+.review-details time {
+    color: #91AEEA;
+}
+
+.review p {
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE BOTTOM PANELS */
+
+@media (max-width: 900px) {
+    .game-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Unavailable game details */
+
+.unavailable {
+    display: inline-block;
+    margin-top: 4px;
+    color: #A5BCE8;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ==========================================
+   RETRO CORNER ACCENTS
+========================================== */
+
+.quick-info,
+.game-description,
+.game-reviews {
+    position: relative;
+    border: 1px solid #40567D;
+}
+
+/* Top-left purple corner */
+
+.quick-info::before,
+.game-description::before,
+.game-reviews::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+
+    width: 18px;
+    height: 18px;
+
+    border-top: 3px solid #A78BFA;
+    border-left: 3px solid #A78BFA;
+
+    pointer-events: none;
+}
+
+/* Bottom-right purple corner */
+
+.quick-info::after,
+.game-description::after,
+.game-reviews::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+
+    width: 18px;
+    height: 18px;
+
+    border-right: 3px solid #A78BFA;
+    border-bottom: 3px solid #A78BFA;
+
+    pointer-events: none;
+}

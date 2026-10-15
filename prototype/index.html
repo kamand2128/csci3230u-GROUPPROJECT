@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameVault | Game Library</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            <span class="logo-star" aria-hidden="true">✧</span>
+            <span class="logo-text">GAMEVAULT</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+
+            <a href="index.html" aria-current="page">
+                LIBRARY
+            </a>
+
+            <a href="#">
+                FAVOURITES
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- Main page content -->
+    <main>
+
+        <!-- Next: Search section -->
+
+        
+        <section class="search-section" aria-labelledby="discover-heading">
+
+            <h1 id="discover-heading">
+                <span aria-hidden="true">&gt;&gt;</span>
+                DISCOVER GAMES
+            </h1>
+
+            <p>FIND YOUR NEXT FREE-TO-PLAY GAME</p>
+
+            <form class="search-form" role="search">
+
+                <label for="game-search">Search games</label>
+
+                <input
+                    type="search"
+                    id="game-search"
+                    name="search"
+                    placeholder="Search for games..."
+                >
+
+                <button type="submit" aria-label="Search games">
+                    →
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Next: Filters -->
+         
+        
+        <div class="library-layout">
+
+            <aside class="filters" aria-label="Game filters">
+                <h2>FILTERS</h2>
+
+                
+                <label for="genre">GENRE</label>
+
+                <select id="genre" name="genre">
+                    <option value="all">All Genres</option>
+                    <option value="shooter">Shooter</option>
+                    <option value="mmorpg">MMORPG</option>
+                    <option value="rpg">RPG</option>
+                    <option value="strategy">Strategy</option>
+                    <option value="moba">MOBA</option>
+                    <option value="battle-royale">Battle Royale</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="sports">Sports</option>
+                    <option value="racing">Racing</option>
+                    <option value="card-game">Card Game</option>
+                    <option value="sandbox">Sandbox</option>
+                </select>
+
+
+                <label for="platform">PLATFORM</label>
+                <select id="platform" name="platform">
+                    <option value="all">All Platforms</option>
+                    <option value="pc">PC (Windows)</option>
+                    <option value="browser">Web Browser</option>
+                </select>
+
+                <label for="sort">SORT BY</label>
+                <select id="sort" name="sort">
+                    <option value="relevance">Default</option>
+                    <option value="newest">Release Date (Newest)</option>
+                    <option value="oldest">Release Date (Oldest)</option>
+                    <option value="az">Title (A–Z)</option>
+                    <option value="za">Title (Z–A)</option>
+                </select>
+
+            </aside>
+
+            <section class="games-section" aria-labelledby="games-heading">
+                <h2 id="games-heading">AVAILABLE GAMES</h2>
+
+                <div class="games-grid">
+
+                    
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/540/thumbnail.jpg"
+                            alt="Overwatch game thumbnail"
+                        >
+
+                        <h3>Overwatch</h3>
+                        <p>Shooter</p>
+
+                        <a href="game.html">View Details</a>
+                    </article>
+
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/475/thumbnail.jpg"
+                            alt="Genshin Impact game thumbnail"
+                        >
+
+                        <h3>Genshin Impact</h3>
+                        <p>Action RPG</p>
+
+                        <span class="unavailable">Details Coming Soon</span>
+                    </article>                    
+
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/599/thumbnail.jpg"
+                            alt="Marvel Rivals game thumbnail"
+                        >
+
+                        <h3>Marvel Rivals</h3>
+                        <p>Shooter</p>
+
+                        <span class="unavailable">Details Coming Soon</span>
+                    </article>
+
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/57/thumbnail.jpg"
+                            alt="Fortnite game thumbnail"
+                        >
+
+                        <h3>Fortnite</h3>
+                        <p>Shooter</p>
+
+                        <span class="unavailable">Details Coming Soon</span>
+                    </article>
+
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/560/thumbnail.jpg"
+                            alt="Palia game thumbnail"
+                        >
+
+                        <h3>Palia</h3>
+                        <p>MMORPG</p>
+
+                        <span class="unavailable">Details Coming Soon</span>
+                    </article>
+                    
+                    <article class="game-card">
+                        <img
+                            src="https://www.freetogame.com/g/212/thumbnail.jpg"
+                            alt="Brawlhalla game thumbnail"
+                        >
+
+                        <h3>Brawlhalla</h3>
+                        <p>Fighting</p>
+
+                        <span class="unavailable">Details Coming Soon</span>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- Next: Game cards -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>GameVault — CSCI 3230U Group Project</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Overwatch | GameVault</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            <span class="logo-star" aria-hidden="true">✧</span>
+            <span class="logo-text">GAMEVAULT</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+
+            <a href="index.html">
+                LIBRARY
+            </a>
+
+            <a href="#">
+                FAVOURITES
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main class="game-details">
+
+        <a href="index.html" class="back-link">
+            ← BACK TO LIBRARY
+        </a>
+
+            <section class="game-overview" aria-label="Game overview">
+
+                <!-- LEFT: GAME IMAGE -->
+                <div class="game-gallery">
+
+                    <img
+                        class="game-main-image"
+                        src="https://www.freetogame.com/g/540/thumbnail.jpg"
+                        alt="Overwatch game cover artwork"
+                    >
+
+
+                    <div class="game-thumbnails">
+
+                        <img
+                            src="https://www.freetogame.com/g/540/thumbnail.jpg"
+                            alt="Overwatch cover artwork"
+                        >
+
+                        <img
+                            src="https://www.freetogame.com/g/540/overwatch-2-1.jpg"
+                            alt="Overwatch gameplay screenshot 1"
+                        >
+
+                        <img
+                            src="https://www.freetogame.com/g/540/overwatch-2-2.jpg"
+                            alt="Overwatch gameplay screenshot 2"
+                        >
+
+                        <img
+                            src="https://www.freetogame.com/g/540/overwatch-2-3.jpg"
+                            alt="Overwatch gameplay screenshot 3"
+                        >
+
+                    </div>
+
+
+                </div>
+
+                <!-- RIGHT: GAME INFORMATION -->
+                <div class="game-information">
+
+                    <div class="game-title-row">
+                        <h1>OVERWATCH</h1>
+
+                        <button type="button" class="favourite-button">
+                            ♡ ADD TO FAVOURITES
+                        </button>
+                    </div>
+
+                    <p class="game-meta">
+                        Shooter | PC (Windows) | 2022-10-04
+                    </p>
+
+                    <div class="game-status">
+                        <label for="game-status">GAME STATUS</label>
+
+                        <select id="game-status" name="game-status">
+                            <option value="not-started">Not Started</option>
+                            <option value="playing">Playing</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <section class="quick-info">
+                        <h2>QUICK INFO</h2>
+
+                        <dl>
+                            <div>
+                                <dt>GENRE</dt>
+                                <dd>Shooter</dd>
+                            </div>
+
+                            <div>
+                                <dt>PLATFORM</dt>
+                                <dd>PC (Windows)</dd>
+                            </div>
+
+                            <div>
+                                <dt>RELEASE DATE</dt>
+                                <dd>2022-10-04</dd>
+                            </div>
+
+                            <div>
+                                <dt>DEVELOPER</dt>
+                                <dd>Blizzard Entertainment</dd>
+                            </div>
+
+                            <div>
+                                <dt>PUBLISHER</dt>
+                                <dd>Activision Blizzard</dd>
+                            </div>
+                        </dl>
+                    </section>
+
+                </div>
+
+            </section>
+
+
+
+        <!-- About This Game and Reviews will go here -->
+
+        
+        <div class="game-bottom">
+
+            <section class="game-description"
+                    aria-labelledby="about-heading">
+
+                <h2 id="about-heading">ABOUT THIS GAME</h2>
+
+                <p>
+                    Overwatch is a team-based first-person shooter
+                    developed by Blizzard Entertainment. Players
+                    choose from a range of heroes with different
+                    abilities and work together to complete
+                    objectives in multiplayer matches.
+                </p>
+
+            </section>
+
+            <!-- Reviews panel goes here -->
+
+            
+            <section class="game-reviews"
+                    aria-labelledby="reviews-heading">
+
+                <div class="reviews-header">
+                    <h2 id="reviews-heading">REVIEWS</h2>
+
+                    <button type="button" class="review-button">
+                        ✎ WRITE A REVIEW
+                    </button>
+                </div>
+
+                <article class="review">
+                    <div class="review-details">
+                        <strong>PlayerOne</strong>
+                        <time datetime="2026-10-10">2026-10-10</time>
+                    </div>
+
+                    <p>
+                        Really enjoyable team-based gameplay with
+                        a good variety of heroes.
+                    </p>
+                </article>
+
+                <article class="review">
+                    <div class="review-details">
+                        <strong>GameFan</strong>
+                        <time datetime="2026-10-12">2026-10-12</time>
+                    </div>
+
+                    <p>
+                        Fun with friends, especially when working
+                        together as a team.
+                    </p>
+                </article>
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>GameVault — CSCI 3230U Group Project</p>
+    </footer>
+
+    </body>
+    </html>
