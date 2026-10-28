@@ -67,3 +67,44 @@ The project is expected to use:
 ## Project Status
 
 GameVault is currently in the initial planning and setup stage.
+
+
+## Milestone 2 — React Foundation
+
+GameVault has been converted from a static HTML/CSS prototype into an interactive single-page application using Vite and React.
+
+### Running the Application
+
+Make sure Node.js and npm are installed.
+
+From the repository root, run:
+
+```bash
+cd gamevault
+npm install
+npm run dev
+```
+
+Open the local URL displayed in the terminal.
+
+### Implemented Features
+
+- Reusable React components
+- Game library with six games using local mock data
+- Search and genre/platform filtering
+- Interactive favourites
+- Overwatch game details page
+- Screenshot gallery
+- Game status selection
+- State management with React hooks
+
+### Testing
+
+The application has been tested using:
+
+```bash
+npm run build
+npm run lint
+```
+
+Both commands completed successfully.
