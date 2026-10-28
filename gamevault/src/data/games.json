@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": 540,
+    "title": "Overwatch",
+    "genre": "Shooter",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/540/thumbnail.jpg",
+    "detailsAvailable": true
+  },
+  {
+    "id": 475,
+    "title": "Genshin Impact",
+    "genre": "Action RPG",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/475/thumbnail.jpg",
+    "detailsAvailable": false
+  },
+  {
+    "id": 599,
+    "title": "Marvel Rivals",
+    "genre": "Shooter",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/599/thumbnail.jpg",
+    "detailsAvailable": false
+  },
+  {
+    "id": 57,
+    "title": "Fortnite",
+    "genre": "Shooter",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/57/thumbnail.jpg",
+    "detailsAvailable": false
+  },
+  {
+    "id": 560,
+    "title": "Palia",
+    "genre": "MMORPG",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/560/thumbnail.jpg",
+    "detailsAvailable": false
+  },
+  {
+    "id": 212,
+    "title": "Brawlhalla",
+    "genre": "Fighting",
+    "platform": "pc",
+    "thumbnail": "https://www.freetogame.com/g/212/thumbnail.jpg",
+    "detailsAvailable": false
+  }
+]
