@@ -8,7 +8,6 @@ GameVault is a video game library web application that allows users to discover,
 ## Course Information
 
 - Course: CSCI 3230U
-- Project: Group Project
 - Project Name: GameVault
 
 ## Team Members
@@ -108,3 +107,71 @@ npm run lint
 ```
 
 Both commands completed successfully.
+
+## Milestone 3 – Final Implementation
+
+GameVault is a web application that allows users to discover free-to-play games, explore game information, manage favourites, track game statuses and write personal reviews.
+
+### Live Deployment
+
+https://csci3230u-groupproject.vercel.app
+
+### Implemented Features
+
+- Live game data retrieved from the FreeToGame API.
+- Search by game title.
+- Dynamic genre and platform filtering.
+- Alphabetical and release date sorting.
+- Individual game pages with descriptions and screenshots.
+- React Router navigation with dynamic game routes.
+- Persistent favourites and game statuses using localStorage.
+- Game-specific review forms with input validation and local storage.
+- Loading, error and empty-result states.
+- Request cancellation using AbortController.
+- Responsive layouts and keyboard accessibility.
+- Lazy loading of game thumbnails.
+
+### Technologies Used
+
+- React
+- JavaScript
+- CSS
+- Vite
+- React Router
+- FreeToGame API
+- Vitest
+- React Testing Library
+- Vercel
+
+### Running the Project Locally
+
+```bash
+git clone https://github.com/kamand2128/csci3230u-GROUPPROJECT.git
+cd csci3230u-GROUPPROJECT/gamevault
+npm install
+npm run dev
+```
+
+### Testing
+
+```bash
+npm test
+npm run lint
+npm run build
+```
+
+All 10 automated tests passed successfully. ESLint reported zero errors and zero warnings, and the production build completed successfully.
+
+### Individual Contribution
+
+This project was completed individually. I was responsible for the design, implementation, testing, documentation and deployment of GameVault.
+
+### API
+
+Game information is provided by the FreeToGame API.
+
+https://www.freetogame.com/api-doc
+
+### Known Limitations
+
+Favourites, game statuses and reviews are stored locally in the user's browser. They are not synchronised between devices or shared between users. Game availability and information depend on the external API.
