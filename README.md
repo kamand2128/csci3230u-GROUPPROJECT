@@ -55,17 +55,10 @@ The project is expected to use:
 - Git and GitHub
 - RAWG API
 
-## Project Milestones
-
-- [ ] M0 - Team and Topic
-- [ ] M1 - Proposal and Static Prototype
-- [ ] M2 - React Foundation
-- [ ] M3 - Working Application
-- [ ] M4 - Independent Concept and Video
 
 ## Project Status
 
-GameVault is currently in the initial planning and setup stage.
+GameVault is currently finished and deployed.
 
 
 ## Milestone 2 — React Foundation
