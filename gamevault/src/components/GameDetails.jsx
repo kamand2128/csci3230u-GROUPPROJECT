@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function GameDetails({
   game,
@@ -10,14 +9,86 @@ function GameDetails({
   onStatusChange //added so played/not started, etc status is rememberd
 
 }) {
+  const [selectedImage, setSelectedImage] = useState(game.thumbnail);
+  const [details, setDetails] = useState(null);
+  const [detailsLoading, setDetailsLoading] = useState(true);
+  const [detailsError, setDetailsError] = useState(null);
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [reviewName, setReviewName] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [reviews, setReviews] = useState(() => {
+    return JSON.parse(
+      localStorage.getItem(`gamevault-reviews-${game.id}`) || "[]"
+    );
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      `gamevault-reviews-${game.id}`,
+      JSON.stringify(reviews)
+    );
+  }, [reviews, game.id]);
+
+  function handleReviewSubmit(event) {
+    event.preventDefault();
+
+    if (!reviewName.trim() || !reviewText.trim()) {
+      return;
+    }
+
+    const newReview = {
+      id: crypto.randomUUID(),
+      name: reviewName.trim(),
+      text: reviewText.trim(),
+      date: new Date().toISOString().slice(0, 10),
+    };
+
+    setReviews((previous) => [newReview, ...previous]);
+
+    setReviewName("");
+    setReviewText("");
+    setShowReviewForm(false);
+  }
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function fetchDetails() {
+      try {
+        setDetailsLoading(true);
+        setDetailsError(null);
+
+        const response = await fetch(
+          `https://www.freetogame.com/api/game?id=${game.id}`,
+          { signal: controller.signal }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to load game details.");
+        }
+
+        const data = await response.json();
+        setDetails(data);
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          setDetailsError(error.message);
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setDetailsLoading(false);
+        }
+      }
+    }
+
+    fetchDetails();
+
+    return () => controller.abort();
+  }, [game.id]);
+
   const screenshots = [
     game.thumbnail,
-    "https://www.freetogame.com/g/540/overwatch-2-1.jpg",
-    "https://www.freetogame.com/g/540/overwatch-2-2.jpg",
-    "https://www.freetogame.com/g/540/overwatch-2-3.jpg"
+    ...(details?.screenshots || []).map((image) => image.image),
   ];
-
-  const [selectedImage, setSelectedImage] = useState(game.thumbnail);
 
   return (
     <main className="game-details">
@@ -73,7 +144,7 @@ function GameDetails({
           </div>
 
           <p className="game-meta">
-            Shooter | PC (Windows) | 2022-10-04
+            {game.genre} | {game.platform === "pc" ? "PC (Windows)" : "Web Browser"} | {game.release_date}
           </p>
 
           <div className="game-status">
@@ -96,23 +167,23 @@ function GameDetails({
             <dl>
               <div>
                 <dt>GENRE</dt>
-                <dd>Shooter</dd>
+                <dd>{game.genre}</dd>
               </div>
               <div>
                 <dt>PLATFORM</dt>
-                <dd>PC (Windows)</dd>
+                <dd>{game.platform === "pc" ? "PC (Windows)" : "Web Browser"}</dd>
               </div>
               <div>
                 <dt>RELEASE DATE</dt>
-                <dd>2022-10-04</dd>
+                <dd>{game.release_date}</dd>
               </div>
               <div>
                 <dt>DEVELOPER</dt>
-                <dd>Blizzard Entertainment</dd>
+                <dd>{game.developer}</dd>
               </div>
               <div>
                 <dt>PUBLISHER</dt>
-                <dd>Activision Blizzard</dd>
+                <dd>{game.publisher}</dd>
               </div>
             </dl>
           </section>
@@ -125,13 +196,11 @@ function GameDetails({
           aria-labelledby="about-heading"
         >
           <h2 id="about-heading">ABOUT THIS GAME</h2>
-          <p>
-            Overwatch is a team-based first-person shooter
-            developed by Blizzard Entertainment. Players
-            choose from a range of heroes with different
-            abilities and work together to complete
-            objectives in multiplayer matches.
-          </p>
+          {detailsLoading && <p role="status">Loading game details...</p>}
+
+          {detailsError && <p role="alert">{detailsError}</p>}
+
+          <p>{details?.description || game.short_description}</p>
         </section>
 
         <section
@@ -140,32 +209,56 @@ function GameDetails({
         >
           <div className="reviews-header">
             <h2 id="reviews-heading">REVIEWS</h2>
-            <button type="button" className="review-button" disabled>
-              ✎ WRITE A REVIEW
+            <button
+              type="button"
+              className="review-button"
+              onClick={() => setShowReviewForm(!showReviewForm)}
+              aria-expanded={showReviewForm}
+            >
+              {showReviewForm ? "CANCEL" : "✎ WRITE A REVIEW"}
             </button>
           </div>
+            {showReviewForm && (
+              <form className="review-form" onSubmit={handleReviewSubmit}>
+                <label htmlFor="review-name">Your name</label>
+                <input
+                  id="review-name"
+                  type="text"
+                  value={reviewName}
+                  onChange={(event) => setReviewName(event.target.value)}
+                  maxLength={50}
+                  required
+                />
 
-          <article className="review">
-            <div className="review-details">
-              <strong>PlayerOne</strong>
-              <time dateTime="2026-10-10">2026-10-10</time>
-            </div>
-            <p>
-              Really enjoyable team-based gameplay with
-              a good variety of heroes.
-            </p>
-          </article>
+                <label htmlFor="review-text">Your review</label>
+                <textarea
+                  id="review-text"
+                  value={reviewText}
+                  onChange={(event) => setReviewText(event.target.value)}
+                  rows={4}
+                  maxLength={1000}
+                  required
+                />
 
-          <article className="review">
-            <div className="review-details">
-              <strong>GameFan</strong>
-              <time dateTime="2026-10-12">2026-10-12</time>
-            </div>
-            <p>
-              Fun with friends, especially when working
-              together as a team.
-            </p>
-          </article>
+                <button type="submit" className="review-button">
+                  SUBMIT REVIEW
+                </button>
+              </form>
+            )}
+
+            {reviews.length === 0 && (
+              <p>No reviews yet. Be the first to write one!</p>
+            )}
+
+            {reviews.map((review) => (
+              <article className="review" key={review.id}>
+                <div className="review-details">
+                  <strong>{review.name}</strong>
+                  <time dateTime={review.date}>{review.date}</time>
+                </div>
+                <p>{review.text}</p>
+              </article>
+            ))}
         </section>
       </div>
     </main>

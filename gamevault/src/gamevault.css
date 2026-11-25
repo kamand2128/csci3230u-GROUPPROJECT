@@ -842,3 +842,71 @@ footer {
     outline-offset: 2px;
 }
 
+
+/* REVIEW FORM */
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background-color: #0B1120;
+    border: 1px solid #34486D;
+}
+
+.review-form label {
+    color: #C4A1FF;
+    font-size: 13px;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #080D1F;
+    border: 1px solid #40567D;
+    color: #F0F5FF;
+    font: inherit;
+    font-size: 14px;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    outline: 2px solid #A78BFA;
+    outline-offset: 2px;
+}
+
+.review-form button {
+    align-self: flex-start;
+}
+
+.review-button:hover {
+    background-color: #6753A3;
+    color: #FFFFFF;
+}
+
+.review-button:focus-visible {
+    outline: 2px solid #C4A1FF;
+    outline-offset: 3px;
+}
+
+.review p {
+    overflow-wrap: anywhere;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #C4A1FF;
+    outline-offset: 3px;
+}

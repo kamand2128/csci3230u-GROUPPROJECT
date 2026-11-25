@@ -2,7 +2,11 @@
 function GameCard({ game, isFavourite, onToggleFavourite, onViewDetails }) {
   return (
     <article className="game-card">
-      <img src={game.thumbnail} alt={`${game.title} game thumbnail`} />
+      <img
+        src={game.thumbnail}
+        alt={`${game.title} game thumbnail`}
+        loading="lazy"
+      />
 
       <h3>{game.title}</h3>
       <p>{game.genre}</p>

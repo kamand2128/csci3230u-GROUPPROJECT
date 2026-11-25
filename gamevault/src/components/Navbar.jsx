@@ -16,7 +16,7 @@ function Navbar({ view, onNavigate }) {
 
       <nav aria-label="Main navigation">
         <a
-          href="#library"
+          href="/"
           aria-current={view === "library" ? "page" : undefined}
           onClick={(event) => {
             event.preventDefault();
@@ -27,7 +27,7 @@ function Navbar({ view, onNavigate }) {
         </a>
 
         <a
-          href="#favourites"
+          href="/favourites"
           aria-current={view === "favourites" ? "page" : undefined}
           onClick={(event) => {
             event.preventDefault();
